@@ -180,9 +180,9 @@ namespace QLTS.Tool_Khao_Sat.BL
             return await result.Content.ReadAsStringAsync();
         }
 
-        public async Task<string> ExecuteScript_v1(string tenant_id, string query)
+        public async Task<List<DataV1>> ExecuteScript_v1(string tenant_id, string query)
         {
-            var result = "";
+            var result = new List<DataV1>();
 
             var resultContent = await PostApi_v1(tenant_id, query);
 
@@ -195,7 +195,7 @@ namespace QLTS.Tool_Khao_Sat.BL
 
             if(response.Data.Count > 0)
             {
-                result = response.Data.FirstOrDefault().Data;
+                result = response.Data;
             }
 
             return result;

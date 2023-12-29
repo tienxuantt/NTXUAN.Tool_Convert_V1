@@ -343,7 +343,7 @@ namespace QLTS.Tool_Khao_Sat
             }
 
             Thread thread = new Thread(async () => {
-                var scriptv2 = "";
+                var scriptv2 = new List<DataV1>();
 
                 try
                 {
@@ -356,13 +356,16 @@ namespace QLTS.Tool_Khao_Sat
                 }
 
                 // Nếu không có lỗi
-                if (string.IsNullOrEmpty(tenant.error) && !string.IsNullOrEmpty(scriptv2))
+                if (string.IsNullOrEmpty(tenant.error))
                 {
                     try
                     {
                         var tenantV2 = tenants_v2.FirstOrDefault(s => s.stt == tenant.stt);
 
-                        var result = await api.ExecuteScript_v2(tenantV2.tenant_id.ToString(), scriptv2);
+                        foreach (var scriptItem in scriptv2)
+                        {
+                            var result = await api.ExecuteScript_v2(tenantV2.tenant_id.ToString(), scriptItem.Data);
+                        }
 
                         TotalTenantUpgradeDone++;
                     }

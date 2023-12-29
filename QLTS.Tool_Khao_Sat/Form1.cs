@@ -362,10 +362,7 @@ namespace QLTS.Tool_Khao_Sat
                     {
                         var tenantV2 = tenants_v2.FirstOrDefault(s => s.stt == tenant.stt);
 
-                        foreach (var scriptItem in scriptv2)
-                        {
-                            var result = await api.ExecuteScript_v2(tenantV2.tenant_id.ToString(), scriptItem.Data);
-                        }
+                        await RunScript(tenantV2, scriptv2);
 
                         TotalTenantUpgradeDone++;
                     }
@@ -406,6 +403,31 @@ namespace QLTS.Tool_Khao_Sat
 
             thread.IsBackground = true;
             thread.Start();
+        }
+
+        private async Task RunScript(Tenant tenant, List<DataV1> listScript)
+        {
+            int index = 1;
+            string scriptRun = "";
+
+            for (int i = 0; i < listScript.Count; i++)
+            {
+                scriptRun += listScript[i].Data + " \n ";
+
+                if (index >= 500 || (i == listScript.Count - 1))
+                {
+                    Thread.Sleep(3000);
+
+                    var result = await api.ExecuteScript_v2(tenant.tenant_id.ToString(), scriptRun);
+
+                    scriptRun = "";
+                    index = 1;
+                }
+                else
+                {
+                    index++;
+                }
+            }
         }
 
         private void btnStop_Click(object sender, EventArgs e)

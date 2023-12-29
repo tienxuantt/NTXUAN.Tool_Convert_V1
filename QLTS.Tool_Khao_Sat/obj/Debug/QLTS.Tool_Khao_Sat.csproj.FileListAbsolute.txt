@@ -611,7 +611,6 @@ D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\bin\Debug\System.Runtime.CompilerSe
 D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\bin\Debug\System.Text.Encodings.Web.xml
 D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\bin\Debug\System.Text.Json.xml
 D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\obj\Debug\QLTS.Tool_Khao_Sat.csprojAssemblyReference.cache
 D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\obj\Debug\QLTS.Tool_Khao_Sat.exe.config
 D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\obj\Debug\QLTS.Tool_Khao_Sat.fForm.resources
 D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\obj\Debug\QLTS.Tool_Khao_Sat.fFormScript.resources

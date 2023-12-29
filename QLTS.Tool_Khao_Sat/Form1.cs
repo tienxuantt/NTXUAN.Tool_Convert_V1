@@ -38,6 +38,9 @@ namespace QLTS.Tool_Khao_Sat
         // Tối đa bao nhiêu thread
         private int maxProcess = 15;
 
+        // Số dòng chạy
+        private int numberRun = 500;
+
         private object key = new object();
 
         public fForm()
@@ -194,6 +197,9 @@ namespace QLTS.Tool_Khao_Sat
         // Bắt đầu khảo sát các subject được chọn
         private void StartUpgrade()
         {
+            // Số bản ghi chạy
+            numberRun = int.Parse(txtNumberRun.Text);
+
             // Lấy ra các subject khảo sát
             tenantsUpgrade = GetListTenantUpgrade();
 
@@ -414,11 +420,17 @@ namespace QLTS.Tool_Khao_Sat
             {
                 scriptRun += listScript[i].Data + " \n ";
 
-                if (index >= 500 || (i == listScript.Count - 1))
+                if (index >= numberRun || (i == listScript.Count - 1))
                 {
                     Thread.Sleep(3000);
 
-                    var result = await api.ExecuteScript_v2(tenant.tenant_id.ToString(), scriptRun);
+                    try
+                    {
+                        var result = await api.ExecuteScript_v2(tenant.tenant_id.ToString(), scriptRun);
+                    }
+                    catch (Exception ex)
+                    {
+                    }
 
                     scriptRun = "";
                     index = 1;

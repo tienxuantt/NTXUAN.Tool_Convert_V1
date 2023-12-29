@@ -34,6 +34,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnStop = new System.Windows.Forms.Button();
             this.btnLoadTeant = new System.Windows.Forms.Button();
             this.btnSaveCookie = new System.Windows.Forms.Button();
@@ -46,7 +47,7 @@
             this.labelTenantProcess = new System.Windows.Forms.Label();
             this.btnUpgrade = new System.Windows.Forms.Button();
             this.btnEditScript = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtNumberRun = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +104,11 @@
             // 
             this.columnHeader4.Text = "";
             this.columnHeader4.Width = 200;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader1.Width = 170;
             // 
             // btnStop
             // 
@@ -167,6 +173,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.txtNumberRun);
             this.panel4.Controls.Add(this.checkBoxAll);
             this.panel4.Controls.Add(this.labelFail);
             this.panel4.Controls.Add(this.labelSuccess);
@@ -245,10 +252,15 @@
             this.btnEditScript.UseVisualStyleBackColor = false;
             this.btnEditScript.Click += new System.EventHandler(this.btnEditScript_Click);
             // 
-            // columnHeader1
+            // txtNumberRun
             // 
-            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader1.Width = 170;
+            this.txtNumberRun.Font = new System.Drawing.Font("Roboto Slab", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumberRun.Location = new System.Drawing.Point(106, 19);
+            this.txtNumberRun.Name = "txtNumberRun";
+            this.txtNumberRun.Size = new System.Drawing.Size(55, 25);
+            this.txtNumberRun.TabIndex = 12;
+            this.txtNumberRun.Text = "500";
+            this.txtNumberRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fForm
             // 
@@ -299,6 +311,7 @@
         private System.Windows.Forms.Button btnEditScript;
         private System.Windows.Forms.CheckBox checkBoxAll;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.TextBox txtNumberRun;
     }
 }
 

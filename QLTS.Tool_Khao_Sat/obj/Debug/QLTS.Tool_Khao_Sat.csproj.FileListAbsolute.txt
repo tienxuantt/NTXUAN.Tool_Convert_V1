@@ -620,3 +620,4 @@ D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\obj\Debug\QLTS.Tool_Khao_Sat.csproj
 D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\obj\Debug\QLTS.Tool_Khao_Sat.csproj.CopyComplete
 D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\obj\Debug\QLTS.Tool_Khao_Sat.exe
 D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\obj\Debug\QLTS.Tool_Khao_Sat.pdb
+D:\NTXUAN.Tool_Convert_V1\QLTS.Tool_Khao_Sat\obj\Debug\QLTS.Tool_Khao_Sat.csprojAssemblyReference.cache

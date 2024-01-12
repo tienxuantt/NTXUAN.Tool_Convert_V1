@@ -41,13 +41,14 @@
             this.txtCookie = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtNumberRun = new System.Windows.Forms.TextBox();
             this.checkBoxAll = new System.Windows.Forms.CheckBox();
             this.labelFail = new System.Windows.Forms.Label();
             this.labelSuccess = new System.Windows.Forms.Label();
             this.labelTenantProcess = new System.Windows.Forms.Label();
             this.btnUpgrade = new System.Windows.Forms.Button();
             this.btnEditScript = new System.Windows.Forms.Button();
-            this.txtNumberRun = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -116,7 +117,7 @@
             this.btnStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnStop.Font = new System.Drawing.Font("Roboto Slab", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.Location = new System.Drawing.Point(789, 307);
+            this.btnStop.Location = new System.Drawing.Point(789, 349);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(254, 36);
             this.btnStop.TabIndex = 7;
@@ -182,6 +183,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1039, 48);
             this.panel4.TabIndex = 3;
+            // 
+            // txtNumberRun
+            // 
+            this.txtNumberRun.Font = new System.Drawing.Font("Roboto Slab", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumberRun.Location = new System.Drawing.Point(106, 19);
+            this.txtNumberRun.Name = "txtNumberRun";
+            this.txtNumberRun.Size = new System.Drawing.Size(55, 25);
+            this.txtNumberRun.TabIndex = 12;
+            this.txtNumberRun.Text = "500";
+            this.txtNumberRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // checkBoxAll
             // 
@@ -252,21 +263,26 @@
             this.btnEditScript.UseVisualStyleBackColor = false;
             this.btnEditScript.Click += new System.EventHandler(this.btnEditScript_Click);
             // 
-            // txtNumberRun
+            // btnUpdate
             // 
-            this.txtNumberRun.Font = new System.Drawing.Font("Roboto Slab", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumberRun.Location = new System.Drawing.Point(106, 19);
-            this.txtNumberRun.Name = "txtNumberRun";
-            this.txtNumberRun.Size = new System.Drawing.Size(55, 25);
-            this.txtNumberRun.TabIndex = 12;
-            this.txtNumberRun.Text = "500";
-            this.txtNumberRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUpdate.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Roboto Slab", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(789, 307);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(254, 36);
+            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.Text = "Nâng cấp";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // fForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 775);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnEditScript);
             this.Controls.Add(this.btnUpgrade);
             this.Controls.Add(this.label1);
@@ -312,6 +328,7 @@
         private System.Windows.Forms.CheckBox checkBoxAll;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.TextBox txtNumberRun;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

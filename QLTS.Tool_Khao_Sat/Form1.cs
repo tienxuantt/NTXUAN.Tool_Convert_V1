@@ -38,6 +38,9 @@ namespace QLTS.Tool_Khao_Sat
         // Tối đa bao nhiêu thread
         private int maxProcess = 15;
 
+        // 1: Convert 2: Nâng cấp
+        private int typeUpdate = 1;
+
         // Số dòng chạy
         private int numberRun = 500;
 
@@ -362,7 +365,7 @@ namespace QLTS.Tool_Khao_Sat
                 }
 
                 // Nếu không có lỗi
-                if (string.IsNullOrEmpty(tenant.error))
+                if (typeUpdate == 1 && string.IsNullOrEmpty(tenant.error))
                 {
                     try
                     {
@@ -422,7 +425,7 @@ namespace QLTS.Tool_Khao_Sat
 
                 if (index >= numberRun || (i == listScript.Count - 1))
                 {
-                    Thread.Sleep(3000);
+                    Thread.Sleep(2000);
 
                     try
                     {
@@ -449,6 +452,7 @@ namespace QLTS.Tool_Khao_Sat
 
         private void btnUpgrade_Click(object sender, EventArgs e)
         {
+            typeUpdate = 1;
             upgradeActive = true;
 
             if (!ValidateForm(true))
@@ -472,6 +476,19 @@ namespace QLTS.Tool_Khao_Sat
             {
                 item.Checked = checkBoxAll.Checked;
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            typeUpdate = 2;
+            upgradeActive = true;
+
+            if (!ValidateForm(true))
+            {
+                return;
+            }
+
+            StartUpgrade();
         }
     }
 }

@@ -49,6 +49,8 @@
             this.btnUpgrade = new System.Windows.Forms.Button();
             this.btnEditScript = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnGetDataExecute = new System.Windows.Forms.Button();
+            this.txtMaxProcess = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -117,7 +119,7 @@
             this.btnStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnStop.Font = new System.Drawing.Font("Roboto Slab", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.Location = new System.Drawing.Point(789, 349);
+            this.btnStop.Location = new System.Drawing.Point(789, 391);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(254, 36);
             this.btnStop.TabIndex = 7;
@@ -174,6 +176,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.txtMaxProcess);
             this.panel4.Controls.Add(this.txtNumberRun);
             this.panel4.Controls.Add(this.checkBoxAll);
             this.panel4.Controls.Add(this.labelFail);
@@ -191,7 +194,7 @@
             this.txtNumberRun.Name = "txtNumberRun";
             this.txtNumberRun.Size = new System.Drawing.Size(55, 25);
             this.txtNumberRun.TabIndex = 12;
-            this.txtNumberRun.Text = "500";
+            this.txtNumberRun.Text = "200";
             this.txtNumberRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // checkBoxAll
@@ -241,7 +244,7 @@
             this.btnUpgrade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpgrade.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnUpgrade.Font = new System.Drawing.Font("Roboto Slab", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpgrade.Location = new System.Drawing.Point(789, 265);
+            this.btnUpgrade.Location = new System.Drawing.Point(789, 307);
             this.btnUpgrade.Name = "btnUpgrade";
             this.btnUpgrade.Size = new System.Drawing.Size(254, 36);
             this.btnUpgrade.TabIndex = 8;
@@ -269,7 +272,7 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnUpdate.Font = new System.Drawing.Font("Roboto Slab", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(789, 307);
+            this.btnUpdate.Location = new System.Drawing.Point(789, 349);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(254, 36);
             this.btnUpdate.TabIndex = 10;
@@ -277,11 +280,36 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // btnGetDataExecute
+            // 
+            this.btnGetDataExecute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnGetDataExecute.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGetDataExecute.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnGetDataExecute.Font = new System.Drawing.Font("Roboto Slab", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetDataExecute.Location = new System.Drawing.Point(789, 265);
+            this.btnGetDataExecute.Name = "btnGetDataExecute";
+            this.btnGetDataExecute.Size = new System.Drawing.Size(254, 36);
+            this.btnGetDataExecute.TabIndex = 11;
+            this.btnGetDataExecute.Text = "Script - Data - Insert";
+            this.btnGetDataExecute.UseVisualStyleBackColor = false;
+            this.btnGetDataExecute.Click += new System.EventHandler(this.btnGetDataExecute_Click);
+            // 
+            // txtMaxProcess
+            // 
+            this.txtMaxProcess.Font = new System.Drawing.Font("Roboto Slab", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaxProcess.Location = new System.Drawing.Point(731, 19);
+            this.txtMaxProcess.Name = "txtMaxProcess";
+            this.txtMaxProcess.Size = new System.Drawing.Size(41, 25);
+            this.txtMaxProcess.TabIndex = 13;
+            this.txtMaxProcess.Text = "3";
+            this.txtMaxProcess.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // fForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 775);
+            this.Controls.Add(this.btnGetDataExecute);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnEditScript);
             this.Controls.Add(this.btnUpgrade);
@@ -329,6 +357,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.TextBox txtNumberRun;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnGetDataExecute;
+        private System.Windows.Forms.TextBox txtMaxProcess;
     }
 }
 

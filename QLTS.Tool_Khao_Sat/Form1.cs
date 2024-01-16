@@ -203,6 +203,9 @@ namespace QLTS.Tool_Khao_Sat
             // Số bản ghi chạy
             numberRun = int.Parse(txtNumberRun.Text);
 
+            // Số luồng chạy tối đa
+            maxProcess = int.Parse(txtMaxProcess.Text);
+
             // Lấy ra các subject khảo sát
             tenantsUpgrade = GetListTenantUpgrade();
 
@@ -382,6 +385,22 @@ namespace QLTS.Tool_Khao_Sat
                     }
                 }
 
+                // Nếu không có lỗi
+                if (typeUpdate == 3 && string.IsNullOrEmpty(tenant.error))
+                {
+                    try
+                    {
+                         await ExecuteQLTSV1ToV2(tenant, scriptv2);
+
+                         TotalTenantUpgradeDone++;
+                    }
+                    catch (Exception ex)
+                    {
+                        tenant.error = ex.Message;
+                        TotalTenantUpgradeFail++;
+                    }
+                }
+
                 TotalTenantUpgradeSuccess++;
 
                 labelTenantProcess.Invoke(new MethodInvoker(() =>
@@ -412,6 +431,39 @@ namespace QLTS.Tool_Khao_Sat
 
             thread.IsBackground = true;
             thread.Start();
+        }
+
+        private async Task ExecuteQLTSV1ToV2(Tenant tenant, List<DataV1> listScript)
+        {
+            int index = 1;
+            var scriptExecute = new List<DataV1>();
+
+            for (int i = 0; i < listScript.Count; i++)
+            {
+                try
+                {
+                    var scriptExecuteItem = await api.ExecuteScript_v1(tenant.tenant_id.ToString(), listScript[i].Data);
+
+                    scriptExecute.AddRange(scriptExecuteItem);
+                }
+                catch
+                {
+                }
+
+                if (index >= numberRun || (i == listScript.Count - 1))
+                {
+                    var tenantV2 = tenants_v2.FirstOrDefault(s => s.stt == tenant.stt);
+                    // Chạy script v2
+                    await RunScript(tenantV2, scriptExecute);
+
+                    scriptExecute = new List<DataV1>();
+                    index = 1;
+                }
+                else
+                {
+                    index++;
+                }
+            }
         }
 
         private async Task RunScript(Tenant tenant, List<DataV1> listScript)
@@ -481,6 +533,19 @@ namespace QLTS.Tool_Khao_Sat
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             typeUpdate = 2;
+            upgradeActive = true;
+
+            if (!ValidateForm(true))
+            {
+                return;
+            }
+
+            StartUpgrade();
+        }
+
+        private void btnGetDataExecute_Click(object sender, EventArgs e)
+        {
+            typeUpdate = 3;
             upgradeActive = true;
 
             if (!ValidateForm(true))
